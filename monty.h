@@ -3,7 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <unistd.h>
+
+#define _POSIX_C_SOURCE 200809L
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -34,7 +36,5 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-void push(stack_t **_Stack, int _Val, unsigned int _L_Number);
 
 #endif
